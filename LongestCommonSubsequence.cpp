@@ -37,6 +37,9 @@ int LCMRecursive(const string &s1, const string &s2, int i , int j )
 		return 1 + (LCMRecursive(s1, s2, i+1 , j+1 ));
 	else
 		return max(LCMRecursive(s1, s2, i+1 , j),LCMRecursive(s1, s2, i , j+1));  
+	
+	// we can improve the recusion by adding cache i.e memorization
+	// storing the results for already calculate subseqs.
 
 }
 int main(void)
