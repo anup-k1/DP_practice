@@ -29,18 +29,15 @@ int main()
 				continue;
 			}
 			else if( wt[i] <= w )
-			{
+			
 				K[i][w] = max(p[i] + K[i-1][w - wt[i]], K[i-1][w]);
 				//K[i-1][w] --> previous row
 				//p[i] --> profit value at i --> weight
 				// K[i-1][w - wt[i] --> if any wt is remaining, will trave back in 2d array
-			}
+			
 			else 
-			{
 				K[i][w] =K[i-1][w];
 				//this is simple carraying above value --> this is the best we can select.
-			}
-
 		}
 	}
 	cout<<K[n][m]<<endl<<endl;
@@ -49,9 +46,7 @@ int main()
 	for (int i = 0; i < K.size(); i++)
 	{
 		for (int j = 0; j < K[i].size(); j++)
-		{
-			cout << K[i][j] << " ";
-		}    
+			cout << K[i][j] << " "; 
 		cout << endl;
 	}
 
@@ -69,7 +64,6 @@ int main()
 		else
 		{
 			cout<<i<< "= 1 "<<endl;
-
 			j = j - wt[i];
 			i--;
 		}
